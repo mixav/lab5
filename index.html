@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+  <meta charset="UTF-8">
+  <title>The New York Times Angular application</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script src="controllers/script.js"></script>
+  <script src="controllers/factory.js"></script>
+  <script src="controllers/newpost.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/index.css" />
+</head>
+
+<body>
+  <div class="container" ng-controller="NewPostController">
+  <div class="button-container">
+      <h2>Title</h2>
+      <input type="text" ng-model="title">
+  </div>
+  <div class="button-container">
+      <h2>URL</h2>
+      <input type="text" ng-model="url">
+  </div>
+  <div class="button-container">
+      <h2>Abstract</h2>
+      <input type="text" size="35" ng-model="abstract">
+  </div>
+  <div class="button-container">
+    <h2>Add</h2>
+      <button class="button" ng-click="addTopic(title,abstract,url)">Add Topic</button>
+  </div>
+  </div>
+  <hr style="width: 100%; border: 1px solid white;">
+
+  <div class="main-container" ng-controller="MainController">
+        	  <div class="button-container"> <h2>Filter</h2></div>
+    		    <div class="button-container"><input type="text"  ng-model="filter" ></input></div>
+                <hr style="width: 100%; border: 1px solid white;">
+            <div class="list-style" style="height: 60px">
+                <div class="im-div" style="text-align: center"><h2>Preview</h2></div>
+                <div class="txt-div" style="text-align: left"><h2>Abstract</h2></div>
+            </div>
+            <div ng-class="'list-style'" ng-repeat="story in myFactory.topstories | orderBy:sortparam:sortReverse | limitTo:filter" >
+                <div class="im-div" >
+                    <div><img ng-src={{story.multimedia}}></div>
+                    <div ><font size="2">{{story.byline}}</font></div>
+                </div>
+                <div class="txt-div" >
+                    <div><h4>{{story.title}}</h4></div>
+                    <div>{{story.abstract}}</div>
+                    <div><a href="{{story.url}}">Read more</a></div>
+                </div>
+            </div>
+  </div>
+</body>
+</html>
