@@ -12,10 +12,11 @@ app.controller('MainController',function($http,$scope,myFactory){
             var i=3;
             if(!story.multimedia.length)
             {
+              //if no pics
               story.multimedia.push({url: "styles/image.jpg"});
               i=0;
             }
-            $scope.myFactory.topstories.push({
+              $scope.myFactory.topstories.push({
               byline: story.byline,
               abstract: story.abstract,
               title: story.title,

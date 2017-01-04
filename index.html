@@ -7,6 +7,7 @@
   <script src="scripts/script.js"></script>
   <script src="scripts/factory.js"></script>
   <script src="scripts/newpost.js"></script>
+  <script src="scripts/directive.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/index.css" />
 </head>
 
@@ -22,7 +23,7 @@
   </div>
   <div class="button-container">
       <h2>Abstract</h2>
-      <input type="text" size="35" ng-model="abstract">
+      <input type="text" size="35" ng-model="abstract" enter-Directive=addTopic(title,abstract,url)>
   </div>
   <div class="button-container">
     <h2>Add</h2>
