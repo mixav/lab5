@@ -1,7 +1,7 @@
 .list-style{
     margin-bottom: 5px;
     width: 100%;
-    height: 200px;
+    height: 205px;
     display: block;
     border-radius: 10px;
     border: 1px solid black;
@@ -21,7 +21,7 @@
     width: 65%;
     padding-top: 15px;
     padding-left: 15px;
-    height: 185px;
+    height: 190px;
     display: block;
     float: left;
     text-align: left;
