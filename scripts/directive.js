@@ -6,6 +6,5 @@ app.directive("enterDirective",function(){
               scope.$apply(function (){
                   scope.$eval(attrs.enterDirective);
               });
-            }
                 event.preventDefault();
-              })}});
+}})}});
